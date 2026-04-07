@@ -22,9 +22,24 @@ def read_data(file_name, field):
     return data[field]
 
 
+def linear_search(prohledavana_sekvence, hledane_cislo):
+    positions = []
+    count = 0
+    for i, hodnota in enumerate(prohledavana_sekvence):
+        if hodnota == hledane_cislo:
+            positions.append(i)
+            count += 1
+
+    return {"positions" : positions,
+            "count" : count}
+
 def main():
     sequential_data = read_data("sequential.json", "unordered_numbers")
     print(sequential_data)
+    volam_linear = linear_search(prohledavana_sekvence, hledane_cislo)
+    print(volam_linear)
+
+
 
 if __name__ == '__main__':
     main()
